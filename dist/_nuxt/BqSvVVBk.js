@@ -1,0 +1,1 @@
+import{Rn as e,kt as t,t as n,ti as r}from"./D1ogakJt.js";var i=e({__name:`index`,async setup(e){let i,a,o=n();return[i,a]=r(()=>t(o(`/manufacturing/production`),{redirectCode:302})),await i,a(),(e,t)=>null}});export{i as default};

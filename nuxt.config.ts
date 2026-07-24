@@ -1,0 +1,32 @@
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineNuxtConfig({
+  compatibilityDate: '2026-07-23',
+  devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    locales: [
+      { code: 'zh', language: 'zh-CN', file: 'zh.json', name: '中文' },
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' }
+    ],
+    defaultLocale: 'zh',
+    strategy: 'prefix_except_default',
+    langDir: '../app/locales/',
+    lazy: true,
+    detectBrowserLanguage: false
+  },
+  app: {
+    head: {
+      htmlAttrs: { lang: 'zh-CN' },
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'theme-color', content: '#0A1F3F' }
+      ]
+    }
+  },
+  nitro: { prerender: { crawlLinks: true } }
+})

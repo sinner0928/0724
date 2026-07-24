@@ -1,0 +1,290 @@
+import { c as useI18n, a as useLocalePath, p as pages, l as localeText, b as usePageSeo, N as NuxtLink, i as images } from '../virtual/entry.mjs';
+import { defineComponent, computed, unref, withCtx, createTextVNode, toDisplayString, createVNode, resolveDynamicComponent, useSSRContext } from 'vue';
+import { p as publicAssetsURL } from '../_/nitro.mjs';
+import { ssrRenderAttr, ssrInterpolate, ssrRenderComponent, ssrRenderList, ssrRenderVNode, ssrRenderClass } from 'vue/server-renderer';
+import { CheckCircle2, PackageCheck, ShieldCheck, CircuitBoard, ArrowRight } from 'lucide-vue-next';
+import 'nostics';
+import 'nostics/formatters/ansi';
+import 'vue-router';
+import '@vue/shared';
+import 'unhead/plugins';
+import 'unhead/utils';
+import '../routes/renderer.mjs';
+import 'unhead/server';
+import 'unhead/legacy';
+import 'vue-bundle-renderer/runtime';
+import 'devalue';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:url';
+import 'node:crypto';
+
+//#region \0virtual:public?%2Fassets%2Fgongsi.jpg
+var _virtual_public__2Fassets_2Fgongsi_default = publicAssetsURL("/assets/gongsi.jpg");
+//#endregion
+//#region \0virtual:public?%2Fassets%2Flocation-shanghai.jpg
+var _virtual_public__2Fassets_2Flocation_shanghai_default = publicAssetsURL("/assets/location-shanghai.jpg");
+//#endregion
+//#region \0virtual:public?%2Fassets%2Flocation-hangzhou.jpg
+var _virtual_public__2Fassets_2Flocation_hangzhou_default = publicAssetsURL("/assets/location-hangzhou.jpg");
+//#endregion
+//#region \0virtual:public?%2Fassets%2Flocation-shenzhen.jpg
+var _virtual_public__2Fassets_2Flocation_shenzhen_default = publicAssetsURL("/assets/location-shenzhen.jpg");
+//#endregion
+//#region app/pages/index.vue?vue&type=script&setup=true&lang.ts
+var index_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineComponent({
+	__name: "index",
+	__ssrInlineRender: true,
+	setup(__props) {
+		const { locale, t } = useI18n();
+		const localePath = useLocalePath();
+		const capabilityStats = computed(() => locale.value === "en" ? [
+			{
+				value: "Batch",
+				label: "Chip & module shipment",
+				note: "Capacity confirmed by project plan"
+			},
+			{
+				value: "4+1",
+				label: "Product line structure",
+				note: "Keyboard, imaging, remote, wearable and general modules"
+			},
+			{
+				value: "3",
+				label: "R&D / production cities",
+				note: "Hangzhou, Shenzhen and Shanghai"
+			},
+			{
+				value: "Full Flow",
+				label: "Manufacturing support",
+				note: "Sample, pilot run, production and QC shipment"
+			}
+		] : [
+			{
+				value: "批量",
+				label: "芯片模组出货",
+				note: "产能按项目计划确认"
+			},
+			{
+				value: "4+1",
+				label: "产品线结构",
+				note: "键鼠、影像、遥控、穿戴、通用模组"
+			},
+			{
+				value: "3 城",
+				label: "研发与量产协同",
+				note: "杭州、深圳、上海联动"
+			},
+			{
+				value: "全流程",
+				label: "制造交付支持",
+				note: "打样、试产、量产、质检出货"
+			}
+		]);
+		const aboutValues = computed(() => locale.value === "en" ? [
+			{
+				subtitle: "Scale Capability",
+				text: "Batch delivery for chips and modules, with capacity and schedule confirmed by project plan.",
+				icon: CheckCircle2
+			},
+			{
+				subtitle: "Full-Flow Manufacturing",
+				text: "From chip specification and reference design to engineering validation and production delivery.",
+				icon: PackageCheck
+			},
+			{
+				subtitle: "Quality Assurance",
+				text: "Functional tests, RF calibration, reliability validation and shipment inspection by product type.",
+				icon: ShieldCheck
+			}
+		] : [
+			{
+				subtitle: "规模产能",
+				text: "支持芯片与模组批量交付，产能与排期按项目计划确认。",
+				icon: CheckCircle2
+			},
+			{
+				subtitle: "全链路制造",
+				text: "从芯片规格、参考设计到工程验证和量产交付全流程贯通。",
+				icon: PackageCheck
+			},
+			{
+				subtitle: "品质保障",
+				text: "按产品类型执行功能测试、射频校准、可靠性验证与出货检验。",
+				icon: ShieldCheck
+			}
+		]);
+		const productItems = pages.products.detail.sections[0].items;
+		const productLineTiles = computed(() => productItems.slice(0, 4).map((item, index) => ({
+			title: localeText(item.category, locale.value),
+			subtitle: localeText(item.title, locale.value),
+			image: item.image,
+			className: `tile-${index + 1}`
+		})));
+		const leftProductTiles = computed(() => productLineTiles.value.filter((_, index) => [1, 3].includes(index)));
+		const rightProductTiles = computed(() => productLineTiles.value.filter((_, index) => [0, 2].includes(index)));
+		const supportSteps = computed(() => locale.value === "en" ? [
+			{
+				title: "Engineering Sample",
+				text: "Provide samples, evaluation boards and SDKs for early functional validation.",
+				icon: CircuitBoard
+			},
+			{
+				title: "Pilot Validation",
+				text: "Run small-batch validation and lock key process parameters before production.",
+				icon: CheckCircle2
+			},
+			{
+				title: "Batch Manufacturing",
+				text: "Coordinate supply chain production, SMT mounting, assembly and testing.",
+				icon: PackageCheck
+			},
+			{
+				title: "QC Shipment",
+				text: "Combine inspection records, packing checks and batch shipment release.",
+				icon: ShieldCheck
+			}
+		] : [
+			{
+				title: "工程打样",
+				text: "提供工程样品、评估板和 SDK，支持前期功能验证。",
+				icon: CircuitBoard
+			},
+			{
+				title: "试产验证",
+				text: "小批量验证并固化关键工艺参数，为量产做准备。",
+				icon: CheckCircle2
+			},
+			{
+				title: "批量制造",
+				text: "衔接供应链排产，执行 SMT 贴装、组装和测试。",
+				icon: PackageCheck
+			},
+			{
+				title: "质检出货",
+				text: "结合检测记录、包装核验和批次出货放行。",
+				icon: ShieldCheck
+			}
+		]);
+		usePageSeo({
+			zh: "无线连接芯片与模组制造商",
+			en: "Wireless Connectivity Chip & Module Manufacturer"
+		}, {
+			zh: "壹原理科技围绕蓝牙、2.4G、NFC 等方向，提供芯片设计、模组制造、测试验证与量产交付支持。",
+			en: "YiYuanLi supports Bluetooth, 2.4G, NFC and related directions with chip design, module manufacturing, testing validation and production delivery."
+		});
+		return (_ctx, _push, _parent, _attrs) => {
+			const _component_NuxtLink = NuxtLink;
+			_push(`<!--[--><section class="home-hero"><img class="home-hero-media"${ssrRenderAttr("src", _virtual_public__2Fassets_2Fgongsi_default)}${ssrRenderAttr("alt", unref(locale) === "en" ? "Company building" : "公司大楼")}><div class="home-hero-grid" aria-hidden="true"></div><div class="shell home-hero-content"><h1>${ssrInterpolate(unref(locale) === "en" ? "Wireless connectivity chip and module manufacturer." : "无线连接芯片与模组制造商")}</h1><p>${ssrInterpolate(unref(locale) === "en" ? "Headquartered in Hangzhou, with R&D and production collaboration centers in Shenzhen and Shanghai, YiYuanLi covers Bluetooth, 2.4G, NFC and multi-protocol chip modules from design to production delivery." : "总部位于杭州，深圳、上海设有研发与量产协同中心。围绕蓝牙、2.4G、NFC 与多协议芯片模组，提供从设计到量产交付的全链路支持。")}</p><div class="hero-actions">`);
+			_push(ssrRenderComponent(_component_NuxtLink, {
+				class: "button button-ghost",
+				to: unref(localePath)("/products/detail")
+			}, {
+				default: withCtx((_, _push, _parent, _scopeId) => {
+					if (_push) {
+						_push(`${ssrInterpolate(unref(locale) === "en" ? "View Product Lines" : "查看产品线")} `);
+						_push(ssrRenderComponent(unref(ArrowRight), { size: 17 }, null, _parent, _scopeId));
+					} else return [createTextVNode(toDisplayString(unref(locale) === "en" ? "View Product Lines" : "查看产品线") + " ", 1), createVNode(unref(ArrowRight), { size: 17 })];
+				}),
+				_: 1
+			}, _parent));
+			_push(`</div></div></section><section class="home-capability-band"><div class="shell home-capability-grid"><!--[-->`);
+			ssrRenderList(unref(capabilityStats), (item) => {
+				_push(`<article class="home-capability-card"><strong>${ssrInterpolate(item.value)}</strong><span>${ssrInterpolate(item.label)}</span><p>${ssrInterpolate(item.note)}</p></article>`);
+			});
+			_push(`<!--]--></div></section><section class="home-about"><div class="shell home-about-main"><div class="home-about-copy"><p class="eyebrow">${ssrInterpolate(unref(locale) === "en" ? "About YiYuanLi" : "关于壹原理")}</p><h2>${ssrInterpolate(unref(locale) === "en" ? "A manufacturer from chip design to module production." : "从芯片设计到模组量产的制造商。")}</h2><p>${ssrInterpolate(unref(locale) === "en" ? "YiYuanLi focuses on Bluetooth SoC, 2.4G RF, NFC and multi-protocol chip modules. The company links product definition, reference design, engineering validation, pilot run and batch shipment into a clear delivery path." : "壹原理科技覆盖蓝牙 SoC、2.4G 射频、NFC 及多协议芯片模组的研发设计与量产制造。公司将产品定义、参考设计、工程验证、试产确认和批量出货串联成清晰的交付路径。")}</p>`);
+			_push(ssrRenderComponent(_component_NuxtLink, {
+				class: "button",
+				to: unref(localePath)("/about/company")
+			}, {
+				default: withCtx((_, _push, _parent, _scopeId) => {
+					if (_push) {
+						_push(`${ssrInterpolate(unref(locale) === "en" ? "View Details" : "查看详情")} `);
+						_push(ssrRenderComponent(unref(ArrowRight), { size: 17 }, null, _parent, _scopeId));
+					} else return [createTextVNode(toDisplayString(unref(locale) === "en" ? "View Details" : "查看详情") + " ", 1), createVNode(unref(ArrowRight), { size: 17 })];
+				}),
+				_: 1
+			}, _parent));
+			_push(`</div><div class="home-about-image"><img${ssrRenderAttr("src", unref(images).office)}${ssrRenderAttr("alt", unref(locale) === "en" ? "Company and engineering collaboration scene" : "企业与工程协作场景")} loading="lazy"></div></div><div class="home-value-band"><div class="shell home-value-grid"><!--[-->`);
+			ssrRenderList(unref(aboutValues), (value) => {
+				_push(`<article class="home-value-card"><span class="home-value-icon">`);
+				ssrRenderVNode(_push, createVNode(resolveDynamicComponent(value.icon), { size: 28 }, null), _parent);
+				_push(`</span><strong>${ssrInterpolate(value.subtitle)}</strong><p>${ssrInterpolate(value.text)}</p></article>`);
+			});
+			_push(`<!--]--></div></div></section><section class="home-products"><div class="shell home-products-shell"><div class="home-products-left"><div class="home-products-heading"><h2>${ssrInterpolate(unref(locale) === "en" ? "Product\nLines" : "产品线速览")}</h2></div><!--[-->`);
+			ssrRenderList(unref(leftProductTiles), (product) => {
+				_push(ssrRenderComponent(_component_NuxtLink, {
+					key: product.title,
+					class: ["home-product-tile", product.className],
+					to: unref(localePath)("/products/detail")
+				}, {
+					default: withCtx((_, _push, _parent, _scopeId) => {
+						if (_push) _push(`<img${ssrRenderAttr("src", product.image)}${ssrRenderAttr("alt", product.title)} loading="lazy"${_scopeId}><span${_scopeId}><strong${_scopeId}>${ssrInterpolate(product.title)}</strong><small${_scopeId}>${ssrInterpolate(product.subtitle)}</small></span>`);
+						else return [createVNode("img", {
+							src: product.image,
+							alt: product.title,
+							loading: "lazy"
+						}, null, 8, ["src", "alt"]), createVNode("span", null, [createVNode("strong", null, toDisplayString(product.title), 1), createVNode("small", null, toDisplayString(product.subtitle), 1)])];
+					}),
+					_: 2
+				}, _parent));
+			});
+			_push(`<!--]--></div><div class="home-products-grid"><!--[-->`);
+			ssrRenderList(unref(rightProductTiles), (product) => {
+				_push(ssrRenderComponent(_component_NuxtLink, {
+					key: product.title,
+					class: ["home-product-tile", product.className],
+					to: unref(localePath)("/products/detail")
+				}, {
+					default: withCtx((_, _push, _parent, _scopeId) => {
+						if (_push) _push(`<img${ssrRenderAttr("src", product.image)}${ssrRenderAttr("alt", product.title)} loading="lazy"${_scopeId}><span${_scopeId}><strong${_scopeId}>${ssrInterpolate(product.title)}</strong><small${_scopeId}>${ssrInterpolate(product.subtitle)}</small></span>`);
+						else return [createVNode("img", {
+							src: product.image,
+							alt: product.title,
+							loading: "lazy"
+						}, null, 8, ["src", "alt"]), createVNode("span", null, [createVNode("strong", null, toDisplayString(product.title), 1), createVNode("small", null, toDisplayString(product.subtitle), 1)])];
+					}),
+					_: 2
+				}, _parent));
+			});
+			_push(`<!--]--></div></div></section><section class="${ssrRenderClass([{ "is-zh": unref(locale) !== "en" }, "home-footprint"])}"><div class="home-footprint-shell"><div class="home-footprint-content"><h2>${ssrInterpolate(unref(locale) === "en" ? "R&D Layout" : "研发布局")}</h2><div class="home-footprint-copy"><p>${ssrInterpolate(unref(locale) === "en" ? "YiYuanLi Technology is a technology-driven enterprise headquartered in Hangzhou, with R&D centers in Shenzhen and Shanghai." : "壹原理科技是一家总部位于杭州、研发中心设于深圳和上海的技术驱动型企业。")}</p><p>${ssrInterpolate(unref(locale) === "en" ? "The team focuses on wireless connectivity, low-power products and scenario-based solution support, linking product definition, R&D collaboration and delivery communication." : "团队聚焦无线连接、低功耗产品与场景化方案支持，围绕产品定义、研发协同和交付沟通持续推进项目落地。")}</p></div></div><div class="home-footprint-gallery"><article><img${ssrRenderAttr("src", _virtual_public__2Fassets_2Flocation_shanghai_default)}${ssrRenderAttr("alt", unref(locale) === "en" ? "Shanghai R&D center" : "上海研发中心")} loading="lazy"><span>${ssrInterpolate(unref(locale) === "en" ? "Shanghai R&D" : "上海研发中心")}</span></article><article><img${ssrRenderAttr("src", _virtual_public__2Fassets_2Flocation_hangzhou_default)}${ssrRenderAttr("alt", unref(locale) === "en" ? "Hangzhou headquarters" : "杭州总部")} loading="lazy"><span>${ssrInterpolate(unref(locale) === "en" ? "Hangzhou HQ" : "杭州总部")}</span></article><article><img${ssrRenderAttr("src", _virtual_public__2Fassets_2Flocation_shenzhen_default)}${ssrRenderAttr("alt", unref(locale) === "en" ? "Shenzhen R&D center" : "深圳研发中心")} loading="lazy"><span>${ssrInterpolate(unref(locale) === "en" ? "Shenzhen R&D" : "深圳研发中心")}</span></article></div></div></section><section class="home-support"><div class="shell home-support-shell"><div class="home-support-head"><h2>${ssrInterpolate(unref(locale) === "en" ? "From engineering sample to batch shipment, we provide continuous manufacturing support." : "从工程打样到批量出货，我们提供持续制造支持")}</h2><p>${ssrInterpolate(unref(locale) === "en" ? "Around specification confirmation, pilot validation, production coordination and shipment inspection, we help products move steadily into the next stage." : "围绕规格确认、试产验证、生产协同与出货检验，帮助产品更稳定地进入下一阶段。")}</p></div><div class="home-support-grid"><!--[-->`);
+			ssrRenderList(unref(supportSteps), (step) => {
+				_push(`<article>`);
+				ssrRenderVNode(_push, createVNode(resolveDynamicComponent(step.icon), { size: 28 }, null), _parent);
+				_push(`<h3>${ssrInterpolate(step.title)}</h3><p>${ssrInterpolate(step.text)}</p></article>`);
+			});
+			_push(`<!--]--></div><div class="home-support-action">`);
+			_push(ssrRenderComponent(unref(CircuitBoard), { size: 34 }, null, _parent));
+			_push(`<div><strong>${ssrInterpolate(unref(locale) === "en" ? "Have a product requirement? Submit project information for follow-up." : "有产品需求？提交信息，我们会根据产品方向和预计数量安排后续对接。")}</strong><span>${ssrInterpolate(unref(locale) === "en" ? "Share product direction, sample status, expected quantity and delivery target to start a focused conversation." : "建议说明产品方向、样品状态、预计数量和交付目标，便于工程与商务快速判断。")}</span></div>`);
+			_push(ssrRenderComponent(_component_NuxtLink, {
+				to: unref(localePath)("/contact/inquiry"),
+				class: "button"
+			}, {
+				default: withCtx((_, _push, _parent, _scopeId) => {
+					if (_push) {
+						_push(`${ssrInterpolate(unref(t)("cta.contact"))} `);
+						_push(ssrRenderComponent(unref(ArrowRight), { size: 17 }, null, _parent, _scopeId));
+					} else return [createTextVNode(toDisplayString(unref(t)("cta.contact")) + " ", 1), createVNode(unref(ArrowRight), { size: 17 })];
+				}),
+				_: 1
+			}, _parent));
+			_push(`</div></div></section><!--]-->`);
+		};
+	}
+});
+//#endregion
+//#region app/pages/index.vue
+var _sfc_setup = index_vue_vue_type_script_setup_true_lang_default.setup;
+index_vue_vue_type_script_setup_true_lang_default.setup = (props, ctx) => {
+	const ssrContext = useSSRContext();
+	(ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
+	return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+var pages_default = index_vue_vue_type_script_setup_true_lang_default;
+
+export { pages_default as default };
+//# sourceMappingURL=pages-CI7z2guA.mjs.map

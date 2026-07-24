@@ -1,0 +1,206 @@
+//#region app/locales/en.json
+var resource = {
+	"siteName": {
+		"t": 0,
+		"b": {
+			"t": 2,
+			"i": [{ "t": 3 }],
+			"s": "YiYuanLi"
+		}
+	},
+	"siteTag": {
+		"t": 0,
+		"b": {
+			"t": 2,
+			"i": [{ "t": 3 }],
+			"s": "Wireless Connectivity Chip & Module Manufacturer"
+		}
+	},
+	"nav": {
+		"home": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Home"
+			}
+		},
+		"about": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "About Us"
+			}
+		},
+		"products": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Products"
+			}
+		},
+		"manufacturing": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Manufacturing"
+			}
+		},
+		"contact": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Contact"
+			}
+		}
+	},
+	"cta": {
+		"inquiry": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Submit Requirement"
+			}
+		},
+		"contact": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Contact Us"
+			}
+		},
+		"learn": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Learn More"
+			}
+		},
+		"viewProducts": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "View Products"
+			}
+		},
+		"search": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Search"
+			}
+		}
+	},
+	"footer": {
+		"summary": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "YiYuanLi is a wireless connectivity chip and module manufacturer covering Bluetooth, 2.4G and NFC, providing full-flow support from design to production."
+			}
+		},
+		"quick": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Quick Links"
+			}
+		},
+		"follow": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Follow Us"
+			}
+		},
+		"contact": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Contact & Inquiry"
+			}
+		},
+		"address": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Hangzhou headquarters with R&D and production collaboration in Shenzhen and Shanghai."
+			}
+		},
+		"rights": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "All rights reserved."
+			}
+		},
+		"record": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "ICP record"
+			}
+		},
+		"privacy": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Privacy"
+			}
+		},
+		"terms": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Terms"
+			}
+		}
+	},
+	"form": {
+		"success": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Your information has been recorded. We will arrange the next conversation based on the actual situation."
+			}
+		},
+		"required": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Please complete the required fields."
+			}
+		},
+		"invalidEmail": {
+			"t": 0,
+			"b": {
+				"t": 2,
+				"i": [{ "t": 3 }],
+				"s": "Please enter a valid email address."
+			}
+		}
+	}
+};
+
+export { resource as default };
+//# sourceMappingURL=en-CqefZnbm.mjs.map
