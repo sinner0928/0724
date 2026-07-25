@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc></url><url><loc>/about</loc></url><url><loc>/products</loc></url><url><loc>/manufacturing</loc></url><url><loc>/quality</loc></url><url><loc>/contact</loc></url>
-  <url><loc>/en</loc></url><url><loc>/en/about</loc></url><url><loc>/en/products</loc></url><url><loc>/en/manufacturing</loc></url><url><loc>/en/quality</loc></url><url><loc>/en/contact</loc></url>
+  <!-- 中文首页 -->
+  <url><loc>/</loc></url>
+  <!-- 关于我们 -->
+  <url><loc>/about/company</loc></url>
+  <url><loc>/about/business</loc></url>
+  <url><loc>/about/team</loc></url>
+  <!-- 产品中心 -->
+  <url><loc>/products/detail</loc></url>
+  <url><loc>/products/scenarios</loc></url>
+  <url><loc>/products/inquiry</loc></url>
+  <!-- 制造与服务 -->
+  <url><loc>/manufacturing/production</loc></url>
+  <url><loc>/manufacturing/process</loc></url>
+  <url><loc>/manufacturing/testing</loc></url>
+  <url><loc>/manufacturing/certification</loc></url>
+  <!-- 联系我们 -->
+  <url><loc>/contact/info</loc></url>
+  <url><loc>/contact/inquiry</loc></url>
+  <url><loc>/contact/visit</loc></url>
+  <!-- English -->
+  <url><loc>/en</loc></url>
+  <url><loc>/en/about/company</loc></url>
+  <url><loc>/en/about/business</loc></url>
+  <url><loc>/en/about/team</loc></url>
+  <url><loc>/en/products/detail</loc></url>
+  <url><loc>/en/products/scenarios</loc></url>
+  <url><loc>/en/products/inquiry</loc></url>
+  <url><loc>/en/manufacturing/production</loc></url>
+  <url><loc>/en/manufacturing/process</loc></url>
+  <url><loc>/en/manufacturing/testing</loc></url>
+  <url><loc>/en/manufacturing/certification</loc></url>
+  <url><loc>/en/contact/info</loc></url>
+  <url><loc>/en/contact/inquiry</loc></url>
+  <url><loc>/en/contact/visit</loc></url>
 </urlset>

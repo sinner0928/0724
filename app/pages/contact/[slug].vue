@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { getPage, usePageSeo } from '~/data/site'
+definePageMeta({
+  middleware: (to) => {
+    if (String(to.params.slug) === 'visit') {
+      const localePrefix = to.path.startsWith('/en/') ? '/en' : ''
+      return navigateTo(`${localePrefix}/contact#inquiry`, { redirectCode: 302 })
+    }
+  }
+})
 
-const route = useRoute()
-const localePath = useLocalePath()
-const slug = computed(() => String(route.params.slug || 'info'))
-
-const initialPage = getPage('contact', slug.value)
-if (!initialPage) {
-  await navigateTo(localePath('/contact/info'), { redirectCode: 302 })
-}
-
-const page = computed(() => getPage('contact', slug.value) ?? getPage('contact', 'info')!)
-usePageSeo(page.value.title, page.value.description)
+const page = useSubPage('contact', 'info')
 </script>
 
 <template>

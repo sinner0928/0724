@@ -1,26 +1,13 @@
 {
   "siteName": "YiYuanLi",
-  "siteTag": "Wireless Connectivity Chip & Module Manufacturer",
-  "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "products": "Products",
-    "manufacturing": "Manufacturing",
-    "contact": "Contact"
-  },
   "cta": {
     "inquiry": "Submit Requirement",
     "contact": "Contact Us",
-    "learn": "Learn More",
-    "viewProducts": "View Products",
     "search": "Search"
   },
   "footer": {
     "summary": "YiYuanLi is a wireless connectivity chip and module manufacturer covering Bluetooth, 2.4G and NFC, providing full-flow support from design to production.",
-    "quick": "Quick Links",
     "follow": "Follow Us",
-    "contact": "Contact & Inquiry",
-    "address": "Hangzhou headquarters with R&D and production collaboration in Shenzhen and Shanghai.",
     "rights": "All rights reserved.",
     "record": "ICP record",
     "privacy": "Privacy",

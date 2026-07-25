@@ -6,7 +6,6 @@ export {
   localeText,
   navItems,
   searchIndex,
-  useLocalizedText,
   usePageSeo,
   validRoutes
 } from '~/data/site'

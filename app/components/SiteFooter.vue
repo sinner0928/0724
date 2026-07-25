@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ArrowUpRight, Linkedin, MessageSquareText } from 'lucide-vue-next'
 import { localeText, navItems } from '~/data/site'
 
 const { locale, t } = useI18n()
@@ -13,10 +12,6 @@ const localePath = useLocalePath()
         <NuxtLink class="brand brand-light" :to="localePath('/')">
           <img class="brand-logo" src="/assets/company-logo-wide.png" :alt="t('siteName')" />
         </NuxtLink>
-        <p>{{ t('footer.summary') }}</p>
-        <NuxtLink class="text-link text-link-light" :to="localePath('/contact/inquiry')">
-          {{ t('cta.contact') }} <ArrowUpRight :size="16" />
-        </NuxtLink>
       </div>
 
       <div class="footer-links-group" v-for="item in navItems.slice(1)" :key="item.key">
@@ -26,15 +21,6 @@ const localePath = useLocalePath()
             {{ localeText(child.label, locale) }}
           </NuxtLink>
         </nav>
-      </div>
-
-      <div class="footer-follow">
-        <h3>{{ t('footer.follow') }}</h3>
-        <div class="qr-box">
-          <MessageSquareText :size="24" />
-          <span>{{ locale === 'en' ? 'WeChat official account' : '微信公众号二维码' }}</span>
-        </div>
-        <a href="#" aria-label="LinkedIn"><Linkedin :size="17" /> LinkedIn</a>
       </div>
     </div>
     <div class="shell footer-bottom">

@@ -13,6 +13,7 @@ const searchQuery = ref('')
 const hoveredNavKey = ref<string | null>(null)
 
 const activeState = computed(() => getNavByPath(route.path))
+const activeChildKey = computed(() => route.hash.replace(/^#/, '') || activeState.value.activeChild?.key)
 const currentNav = computed(() => navItems.find((item) => item.key === hoveredNavKey.value) ?? null)
 const showSubNav = computed(() => !!currentNav.value?.children?.length && currentNav.value.key !== 'home')
 const subNavChildren = computed(() => currentNav.value?.children ?? [])
@@ -92,6 +93,7 @@ onMounted(async () => {
             class="nav-link"
             :class="{ active: activeState.activeNav.key === item.key }"
             :aria-expanded="showSubNav && currentNav?.key === item.key ? 'true' : 'false'"
+            :aria-current="activeState.activeNav.key === item.key ? 'page' : undefined"
             @focus="openSubNav(item.key)"
             @click="goMain(item)"
           >
@@ -104,7 +106,7 @@ onMounted(async () => {
                 v-for="child in subNavChildren"
                 :key="child.key"
                 class="subnav-pill"
-                :class="{ active: activeState.activeChild?.key === child.key }"
+                :class="{ active: activeChildKey === child.key }"
                 :to="localePath(child.path)"
                 @click="clearSubNav"
               >
@@ -137,6 +139,7 @@ onMounted(async () => {
             v-model="searchQuery"
             :placeholder="locale === 'en' ? 'Search site' : '站内搜索'"
             type="search"
+            :aria-label="locale === 'en' ? 'Search site' : '站内搜索'"
             @keydown.esc="searchOpen = false"
           />
           <div v-if="searchOpen" class="popover search-popover">
