@@ -35,7 +35,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: NUXT_APP_BASE_URL=/0724/ npx nuxt build --preset github_pages
+        run: NUXT_APP_BASE_URL=/0724/ node node_modules/nuxt/bin/nuxt.mjs build --preset github_pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
